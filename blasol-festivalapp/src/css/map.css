@@ -1,0 +1,212 @@
+.map-page {
+	min-height: calc(100svh - 120px);
+	display: flex;
+	flex-direction: column;
+	padding-top: 76px;
+}
+
+.map-header {
+	position: fixed;
+	left: 50%;
+	top: 16px;
+	transform: translateX(-50%);
+	width: 100%;
+	max-width: 430px;
+	height: 72px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #ffffff;
+	border-bottom: 1px solid #e5ebf2;
+	z-index: 950;
+}
+
+.page-title {
+    margin: 0;
+    font-family: 'Bowlby One', serif;
+    text-transform: uppercase;
+    color: #F4EDDE;
+    font-size: 30px;
+    line-height: 1.1;
+    position: absolute;
+	right: 20px;
+	top: 42px;
+	text-align: right;
+    letter-spacing: 1.5px;
+}
+
+.friends-title {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #4A5B7A;
+    font-size: 20px;
+    line-height: 1.1;
+    letter-spacing: 1.5px;
+    position: absolute;
+    left: 24px;
+    top: 110px;
+    z-index: 3;
+    font-weight: 600;
+}
+
+.map-header-image {
+	width: auto;
+	height: auto;
+	max-width: none;
+	max-height: none;
+	display: block;
+}
+
+
+.map-friends-bg {
+	position: absolute;
+	top: 90px;
+	left: 0;
+	width: auto;
+	height: auto;
+	max-width: none;
+	max-height: none;
+	display: block;
+	z-index: 0;
+}
+
+.map-friends-row {
+    top: 30px;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+	justify-content: flex-start;
+	gap: 8px;
+	overflow-x: auto;
+	padding: 4px 0;
+	white-space: nowrap;
+
+}
+
+.map-buttons {
+	position: relative;
+	z-index: 2;
+	margin-top: 54px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+	gap: 2px;
+	transform: translateX(6px);
+}
+
+.map-button-expand {
+	position: relative;
+	z-index: 2;
+	width: auto;
+	height: auto;
+	max-width: none;
+	max-height: none;
+	display: block;
+}
+
+.map-button-friendview {
+	position: relative;
+	z-index: 2;
+	width: auto;
+	height: auto;
+	max-width: none;
+	max-height: none;
+	display: block;
+}
+
+.map-legend-wrap {
+	position: fixed;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	display: inline-block;
+	z-index: 900;
+}
+
+.map-legend {
+	width: auto;
+	height: auto;
+	max-width: none;
+	max-height: none;
+	display: block;
+}
+
+.legend-title {
+	margin: 0;
+	font-family: 'Bowlby One', serif;
+	text-transform: uppercase;
+	color: #F4EDDE;
+	font-size: 24px;
+	line-height: 1.1;
+	letter-spacing: 1.5px;
+	position: absolute;
+	left: 20px;
+	top: 12px;
+	z-index: 1;
+}
+
+.legend-labels {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+}
+
+.legend-label {
+	margin: 0;
+	position: absolute;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	line-height: 1.1;
+	color: #2A241E;
+    font-weight: 600;
+}
+
+.wc {
+	left: 76px;
+	top: 72px;
+}
+
+.food {
+	left: 76px;
+	top: 118px;
+}
+
+.merch {
+	left: 76px;
+	top: 158px;
+}
+
+.benches {
+	left: 76px;
+	top: 200px;
+}
+
+.water-refill {
+	left: 224px;
+	top: 72px;
+}
+
+.first-aid {
+	left: 224px;
+	top: 118px;
+}
+
+.drinks {
+	left: 254px;
+	top: 158px;
+}
+
+.festival-info {
+	left: 224px;
+	top: 200px;
+}
+
+@media (max-width: 460px) {
+	.map-header {
+		max-width: none;
+	}
+}

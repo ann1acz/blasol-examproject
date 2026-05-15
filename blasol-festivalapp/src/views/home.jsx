@@ -1,7 +1,8 @@
 function Home() {
-	return <main></main>
+	return (
+		<section>
+		</section>
+	)
 }
-
-
 
 export default Home
