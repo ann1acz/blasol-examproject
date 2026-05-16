@@ -1,0 +1,75 @@
+import ANASTASIAProfile from '../assets/ANASTASIAProfile.png'
+import BENJAMINHAVOGFAMILIENProfile from '../assets/BENJAMINHAVOGFAMILIENProfile.png'
+import BONADProfile from '../assets/BONADProfile.png'
+import DOWNTOWNJULYProfile from '../assets/DOWNTOWNJULYProfile.png'
+import ELAKELAISETProfile from '../assets/ELAKELAISETProfile.png'
+import GANGSProfile from '../assets/GANGSProfile.png'
+import INFERALProfile from '../assets/INFERALProfile.png'
+import KAROLINEMOUSINGProfile from '../assets/KAROLINEMOUSINGProfile.png'
+import LARSLILHOLTBANDProfile from '../assets/LARSLILHOLTBANDProfile.png'
+import MARIEFRANKProfile from '../assets/MARIEFRANKProfile.png'
+import NATURALBORNHIPPIESProfile from '../assets/NATURALBORNHIPPIESProfile.png'
+import RUNERASKHAMPENBERGProfile from '../assets/RUNERASK&HAMPENBERGProfile.png'
+import SAVEUSProfile from '../assets/SAVEUSProfile.png'
+import SELVGLADProfile from '../assets/SELVGLADProfile.png'
+import SPECKTORSProfile from '../assets/SPECKTORSPROFILE.png'
+import TOSEDRENGETURProfile from '../assets/TOSEDRENGETURProfile.png'
+import ZARPAULOProfile from '../assets/ZARPAULOProfile.png'
+
+const artistProfiles = {
+  SAVEUS: SAVEUSProfile,
+
+  ANASTASIA: ANASTASIAProfile,
+  ANAS: ANASTASIAProfile,
+
+  BONAD: BONADProfile,
+
+  'BENJAMIN HAV & FAMILIEN': BENJAMINHAVOGFAMILIENProfile,
+  'BENJAMINHAV&FAMILIEN': BENJAMINHAVOGFAMILIENProfile,
+  BENJAMINHAVOGFAMILIEN: BENJAMINHAVOGFAMILIENProfile,
+
+  'DOWNTOWN JULY': DOWNTOWNJULYProfile,
+  DOWNTOWNJULY: DOWNTOWNJULYProfile,
+
+  'ELÄKELÄISET': ELAKELAISETProfile,
+  ELAKELAISET: ELAKELAISETProfile,
+
+  GNAGS: GANGSProfile,
+  GANGS: GANGSProfile,
+
+  INFERAL: INFERALProfile,
+
+  'KAROLINE MOUSING': KAROLINEMOUSINGProfile,
+  KAROLINEMOUSING: KAROLINEMOUSINGProfile,
+
+  'LARS LILHOLT': LARSLILHOLTBANDProfile,
+  'LARS LILHOLT BAND': LARSLILHOLTBANDProfile,
+  LARSLILHOLT: LARSLILHOLTBANDProfile,
+
+  'MARIE FRANK': MARIEFRANKProfile,
+  MARIEFRANK: MARIEFRANKProfile,
+  MARIE: MARIEFRANKProfile,
+
+  'NATURAL BORN HIPPIES': NATURALBORNHIPPIESProfile,
+  NATURALBORNHIPPIES: NATURALBORNHIPPIESProfile,
+
+  'RUNE RASK & HAMPENBERG': RUNERASKHAMPENBERGProfile,
+  'RUNERASK&HAMPENBERG': RUNERASKHAMPENBERGProfile,
+  RUNERASKHAMPENBERG: RUNERASKHAMPENBERGProfile,
+
+  SELVGLAD: SELVGLADProfile,
+  SELVG: SELVGLADProfile,
+
+  SPECKTORS: SPECKTORSProfile,
+
+  'TOSE DRENGE TOUR': TOSEDRENGETURProfile,
+  'TOSE DRENGE TUR': TOSEDRENGETURProfile,
+  TOSEDRENGE: TOSEDRENGETURProfile,
+  TOSEDRENGETOUR: TOSEDRENGETURProfile,
+  TOSEDRENGETUR: TOSEDRENGETURProfile,
+
+  'ZAR PAULO': ZARPAULOProfile,
+  ZARPAULO: ZARPAULOProfile,
+}
+
+export default artistProfiles

@@ -1,0 +1,40 @@
+.artist-overlay-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.artist-overlay-modal {
+  position: relative;
+  width: min(100%, 430px);
+  max-height: 90vh;
+  overflow: auto;
+}
+
+.artist-overlay-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.artist-overlay-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+}
