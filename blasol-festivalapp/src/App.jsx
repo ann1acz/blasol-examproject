@@ -5,7 +5,7 @@ import Home from './views/home.jsx'
 import Lineup from './views/lineup.jsx'
 import Map from './views/map.jsx'
 import Profile from './views/profile.jsx'
-
+import MySchedule from './views/myschedule.jsx'
 
 function App() {
   return (
@@ -16,6 +16,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/map" element={<Map />} />
             <Route path="/lineup" element={<Lineup />} />
+            <Route path="/myschedule" element={<MySchedule />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>

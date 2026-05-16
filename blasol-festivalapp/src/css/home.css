@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
+
+.home-page {
+  width: 100%;
+  max-width: 430px;
+  min-height: calc(100svh - 120px);
+  margin: 0 auto;
+  background: #f6f0df;
+  padding-bottom: 90px;
+  box-sizing: border-box;
+  font-family: 'Bowlby One', sans-serif;
+  overflow-x: hidden;
+}
+
+.home-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.home-top-shape {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.home-top-hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: -34px;
+  margin-bottom: -2px;
+  position: relative;
+  z-index: 1;
+}
+
+.home-section {
+  width: 100%;
+  padding: 12px 0 0;
+  box-sizing: border-box;
+}
+
+.section-title {
+  margin: 0 0 14px 24px;
+  color: #4a5b7a;
+  font-family: 'Bowlby One', sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1.8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.friends-nearby-section {
+  margin-top: 8px;
+}
+
+.friends-row {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 0 12px 0 24px;
+  box-sizing: border-box;
+}
+
+.friend-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 46px;
+  flex-shrink: 0;
+}
+
+.friend-avatar {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  display: block;
+}
+
+.friend-name {
+  margin-top: 4px;
+  font-size: 12px;
+  color: #4a5b7a;
+  line-height: 1.1;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.see-map-button {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.see-map-button img {
+  display: block;
+  width: 54px;
+  height: auto;
+}
+
+.ticket-section {
+  margin-top: 18px;
+}
+
+.ticket-wrapper {
+  width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.ticket-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.live-now-section {
+  margin-top: 18px;
+}
