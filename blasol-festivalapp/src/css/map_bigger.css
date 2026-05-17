@@ -19,7 +19,7 @@
 
 .map-page--bigger .map-canvas-controls {
 	position: absolute;
-	top: -24px;
+	top: -14px;
 	left: 12px;
 	z-index: 10;
 	display: flex;
@@ -38,7 +38,7 @@
 	align-items: flex-end;
 	gap: 2px;
 	right: 12px;
-	top: 120px;
+	top: 130px;
 }
 
 .map-button-expand {

@@ -23,7 +23,7 @@
 	z-index: 950;
 }
 
-.page-title {
+.map-page--default .page-title {
     margin: 0;
     font-family: 'Bowlby One', serif;
     text-transform: uppercase;
@@ -37,7 +37,7 @@
     letter-spacing: 1.5px;
 }
 
-.friends-title {
+.map-page--default .friends-title {
     margin: 0;
     font-family: 'Poppins', sans-serif;
     color: #4A5B7A;
@@ -46,7 +46,7 @@
     letter-spacing: 1.5px;
     position: absolute;
     left: 24px;
-    top: 20px;
+    top: 28px;
     z-index: 3;
     font-weight: 600;
 }
@@ -64,7 +64,7 @@
 	z-index: 20;
 }
 
-.map-friends-bg {
+.map-page--default .map-friends-bg {
 	position: absolute;
 	left: 0;
 	width: auto;
@@ -73,12 +73,14 @@
 	max-height: none;
 	display: block;
 	z-index: 0;
+	top: 10px;
 }
 
-.map-friends-row {
-    top: 26px;
-	margin: 20px;
-	position: relative;
+.map-page--default .map-friends-row {
+    position: absolute;
+    top: 44px;
+	left: 10px;
+	margin: 10px;
 	z-index: 1;
 	display: flex;
 	flex-direction: row;
@@ -91,7 +93,7 @@
 	white-space: nowrap;
 }
 
-.map-buttons {
+.map-page--default .map-buttons {
 	position: fixed;
 	z-index: 30;
 	display: flex;
@@ -99,19 +101,17 @@
 	justify-content: flex-end;
 	align-items: flex-end;
 	gap: 2px;
-	right: 750px;
-	top: 236px;
+	right: 10px;
+	top: 230px;
 }
 
 .map-button-expand {
-	z-index: 2;
 	width: auto;
 	height: auto;
 	display: block;
 }
 
 .map-button-friendview {
-	z-index: 2;
 	width: auto;
 	height: auto;
 	display: block;
@@ -129,12 +129,15 @@
 	pointer-events: none;
 }
 
-.map-canvas-controls {
+.map-page--default .map-canvas-controls {
+	position: fixed;
+	left: 10px;
+	top: 230px;
 	display: flex;
 	justify-content: flex-end;
 	gap: 8px;
-	padding: 140px 12px 0;
 	pointer-events: auto;
+	z-index: 30;
 }
 
 .map-control-button {

@@ -2,52 +2,78 @@
 
 .home-page {
   width: 100%;
+  max-width: 430px;
+  min-height: calc(100svh - 120px);
+  margin: 0 auto;
   background: #f6f0df;
+  padding-top: 76px;
+  padding-bottom: 90px;
   box-sizing: border-box;
   font-family: 'Bowlby One', sans-serif;
   overflow-x: hidden;
+}
+
+.home-header {
+  position: fixed;
+  left: 50%;
+  top: 16px;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  height: 72px;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-bottom: 1px solid #e5ebf2;
+  z-index: 950;
+}
+
+.home-header-image {
+  display: block;
+}
+
+.home-page-title {
+  margin: 0;
+  font-family: 'Bowlby One', serif;
+  text-transform: uppercase;
+  color: #f4edde;
+  font-size: 30px;
+  line-height: 1.1;
+  position: absolute;
+  right: 20px;
+  top: 42px;
+  text-align: right;
+  letter-spacing: 1.5px;
+  z-index: 3;
 }
 
 .home-top {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  background: transparent;
   overflow: hidden;
   line-height: 0;
-}
-
-.home-top-shape {
-  display: block;
-  width: 100%;
-  height: auto;
-  position: relative;
-  z-index: 2;
 }
 
 .home-top-hero {
   display: block;
   width: 100%;
-  height: auto;
-  margin-top: -34px;
+  bottom: 10px;
   margin-bottom: -2px;
   position: relative;
-  z-index: 1;
 }
 
-.home-section {
-  width: 100%;
-  padding: 12px 0 0;
-  box-sizing: border-box;
+@media (max-width: 460px) {
+  .home-header {
+    max-width: none;
+  }
 }
 
-.section-title {
+.home-friends-title,
+.home-ticket-title,
+.home-live-title {
   margin: 0 0 14px 24px;
   color: #4a5b7a;
   font-family: 'Bowlby One', sans-serif;
-  font-size: 22px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 400;
   line-height: 1;
@@ -57,43 +83,32 @@
 }
 
 .friends-nearby-section {
-  margin-top: 8px;
+  margin-top: -12px;
+  padding-top: 12px;
 }
 
 .friends-row {
-  width: 100%;
   display: flex;
-  align-items: flex-start;
-  gap: 8px;
+  align-items: center;
+  gap: 15px;
   padding: 0 12px 0 24px;
   box-sizing: border-box;
 }
 
 .friend-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 46px;
+  width: 58px;
   flex-shrink: 0;
 }
 
 .friend-avatar {
-  width: 46px;
-  height: 46px;
+  width: 58px;
+  height: 72px;
   object-fit: contain;
   display: block;
 }
 
-.friend-name {
-  margin-top: 4px;
-  font-size: 12px;
-  color: #4a5b7a;
-  line-height: 1.1;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-
 .see-map-button {
+  position: relative;
   margin-left: auto;
   background: transparent;
   border: none;
@@ -104,18 +119,31 @@
 
 .see-map-button img {
   display: block;
-  width: 54px;
+  width: 62px;
   height: auto;
 }
 
+.see-map-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000000;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  pointer-events: none;
+}
+
 .ticket-section {
-  margin-top: 18px;
+  margin-top: 40px;
+  padding-top: 12px;
 }
 
 .ticket-wrapper {
-  width: 100%;
-  padding: 0;
-  box-sizing: border-box;
+  padding: 0 17px;
 }
 
 .ticket-image {
@@ -126,4 +154,5 @@
 
 .live-now-section {
   margin-top: 18px;
+  padding-top: 12px;
 }

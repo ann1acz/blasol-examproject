@@ -198,7 +198,7 @@ function Map() {
   }
 
   return (
-    <section className="map-page">
+    <section className="map-page map-page--default">
       <header className="map-header">
         <img className="map-header-image" src={headerImage} alt="Map header" />
         <h1 className="page-title">Map</h1>
