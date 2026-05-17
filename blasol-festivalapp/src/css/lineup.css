@@ -2,7 +2,9 @@
 
 .lineup-page {
   width: 100%;
-  min-height: calc(100svh - 120px);
+  max-width: 430px;
+  height: calc(100svh - 88px);
+  margin: 0 auto;
   background: #f6f0df;
   box-sizing: border-box;
   overflow: hidden;
@@ -16,23 +18,6 @@
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
-}
-
-.lineup-statusbar {
-  height: 24px;
-  padding: 10px 18px 0;
-  box-sizing: border-box;
-  color: #fff7eb;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.lineup-status-icons {
-  font-size: 12px;
-  letter-spacing: 2px;
 }
 
 .lineup-header {
@@ -136,6 +121,7 @@
 .lineup-content {
   flex: 1;
   min-height: 0;
+  display: flex;
   background: #f6f0df;
 }
 
@@ -230,6 +216,7 @@
   position: absolute;
   left: 0;
   top: 0;
+  background: #b8563a;
   z-index: 3;
 }
 
@@ -315,13 +302,25 @@
   user-select: none;
 }
 
-.artist-star-selected {
+.artist-star-default {
   position: absolute;
   display: block;
   pointer-events: none;
   user-select: none;
   z-index: 6;
   object-fit: contain;
+}
+
+.artist-star-selected {
+  position: absolute;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+  z-index: 6;
+  color: #c99f3c;
+  background: currentColor;
+  mask: var(--star-icon) center / contain no-repeat;
+  -webkit-mask: var(--star-icon) center / contain no-repeat;
 }
 
 .artist-star-hitbox {

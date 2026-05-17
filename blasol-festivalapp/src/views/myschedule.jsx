@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../css/myschedule.css'
 
-import starFrame from '../assets/Starframe.png'
+import starIcon from '../assets/star.svg'
 import addButton from '../assets/ADDBUTTON.png'
 import myScheduleTopShape from '../assets/MyScheduleTopShape.png'
 import lineupTopShape from '../assets/LineupTopShape.png'
@@ -11,6 +11,7 @@ import blaSolLogo from '../assets/BlaSollogo.png'
 
 import ArtistOverlay from '../components/ArtistOverlay'
 import artistProfiles from '../components/artistProfiles'
+import lineupData from '../components/lineupData'
 import { getSavedSchedule, toggleScheduleItem } from '../components/scheduleStorage'
 
 function MySchedule() {
@@ -28,19 +29,30 @@ function MySchedule() {
     setSavedItems(updated)
   }
 
+  const scheduleItems = useMemo(() => {
+    return savedItems.map((item) => {
+      const currentArtist = lineupData.find((artist) => artist.id === item.id)
+      return currentArtist ? { ...item, ...currentArtist } : item
+    })
+  }, [savedItems])
+
   const filteredItems = useMemo(() => {
-    return savedItems.filter((item) =>
+    return scheduleItems.filter((item) =>
       item.name.toLowerCase().includes(search.toLowerCase())
     )
-  }, [savedItems, search])
+  }, [scheduleItems, search])
+
+  const getStarStyle = (artist) => ({
+    right: `${18 - (artist.myScheduleStarOffsetX ?? 0)}px`,
+    top: `calc(50% + ${artist.myScheduleStarOffsetY ?? 0}px)`,
+    width: `${artist.myScheduleStarSize ?? 30}px`,
+    height: `${artist.myScheduleStarSize ?? 30}px`,
+    '--star-icon': `url(${starIcon})`,
+  })
 
   return (
     <div className="myschedule-page">
       <div className="myschedule-top">
-        <div className="myschedule-statusbar">
-          <span>14:23</span>
-          <div className="myschedule-status-icons">⌶ 𐄁 ▱</div>
-        </div>
 
         <div className="myschedule-header">
           <div className="myschedule-brand-wrap">
@@ -133,13 +145,14 @@ function MySchedule() {
               <button
                 className="myschedule-star-button"
                 type="button"
+                style={getStarStyle(artist)}
                 onClick={(e) => {
                   e.stopPropagation()
                   handleRemove(artist)
                 }}
                 aria-label={`Unsave ${artist.name}`}
               >
-                <img src={starFrame} alt="" className="myschedule-star-icon" />
+                <span className="myschedule-star-icon" aria-hidden="true" />
               </button>
             </div>
           ))}

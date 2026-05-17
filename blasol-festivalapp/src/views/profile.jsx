@@ -20,12 +20,8 @@ function Profile() {
     <>
       <div className="profile-page">
         <div className="profile-top">
-          <div className="profile-statusbar">
-            <span>14:23</span>
-            <div className="profile-status-icons">▮▮▮ ⌶ ▱</div>
-          </div>
-
           <img src={headerShape} alt="" className="profile-top-shape" />
+          <h1 className="profile-page-title">Profile</h1>
 
           <div className="profile-hero-wrap">
             <img

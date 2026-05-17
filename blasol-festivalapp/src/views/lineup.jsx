@@ -6,7 +6,7 @@ import mainRectangle from '../assets/Mainrectangle.png'
 import timelineBar from '../assets/Timelinebar.png'
 import verticalRectangle from '../assets/VerticalRectangle1.png'
 import horizontalRectangle from '../assets/Horizontal rectangle.png'
-import starFrame from '../assets/Starframe.png'
+import starIcon from '../assets/star.svg'
 import sunLogo from '../assets/Sunlogo.png'
 import blaSolLogo from '../assets/BlaSollogo.png'
 import lineupTopShape from '../assets/LineupTopShape.png'
@@ -18,12 +18,70 @@ import lineupData, { stages, timeLabels } from '../components/lineupData'
 import { getSavedSchedule, toggleScheduleItem } from '../components/scheduleStorage'
 
 const TIMELINE_WIDTH = 2416
-const TIMELINE_HEIGHT = 676
 const TOPBAR_HEIGHT = 25
 const LEFT_RAIL_WIDTH = 33
-const ROW_HEIGHT = 145
 const GRID_HEIGHT = 580
-const HOUR_WIDTH = 120
+const TIMELINE_HEIGHT = TOPBAR_HEIGHT + GRID_HEIGHT
+const HOUR_WIDTH = (TIMELINE_WIDTH - LEFT_RAIL_WIDTH) / timeLabels.length
+const STAGE_HEIGHT_PERCENT = 100 / stages.length
+const TIMELINE_START_HOUR = 11
+const STAR_RIGHT_OFFSET = 78
+const STAR_SCALE = 1.18
+const artistTimes = {
+  1: ['11:45', '13:30'],
+  2: ['13:45', '15:30'],
+  3: ['16:45', '19:00'],
+  4: ['19:25', '21:50'],
+  5: ['22:15', '00:15'],
+  6: ['12:45', '14:00'],
+  7: ['15:20', '17:00'],
+  8: ['18:00', '20:10'],
+  9: ['21:00', '23:00'],
+  10: ['23:30', '01:30'],
+  11: ['12:50', '14:00'],
+  12: ['15:10', '16:00'],
+  13: ['18:00', '19:50'],
+  14: ['20:50', '22:30'],
+  15: ['23:40', '01:50'],
+  16: ['14:00', '15:00'],
+  17: ['15:15', '16:10'],
+  18: ['16:20', '17:30'],
+  19: ['18:30', '20:00'],
+  20: ['20:15', '21:40'],
+  21: ['22:00', '00:00'],
+}
+const toGridPercent = (value) => `${(value / GRID_HEIGHT) * 100}%`
+const getArtistTimes = (artist) => artistTimes[artist.id]
+const timeToHours = (time) => {
+  const [hours, minutes] = time.split(':').map(Number)
+  const normalizedHours = hours < TIMELINE_START_HOUR ? hours + 24 : hours
+  return normalizedHours + minutes / 60
+}
+const getTimeLeft = (time) => (timeToHours(time) - TIMELINE_START_HOUR) * HOUR_WIDTH
+const getCardLeft = (artist) => {
+  const times = getArtistTimes(artist)
+  return times ? getTimeLeft(times[0]) : artist.cardLeft
+}
+const getCardWidth = (artist) => {
+  const times = getArtistTimes(artist)
+  if (!times) {
+    return artist.cardWidth
+  }
+
+  return artist.cardWidth
+}
+const getStarLeft = (artist) => getCardLeft(artist) + getCardWidth(artist) - STAR_RIGHT_OFFSET
+const getStageIndex = (top) =>
+  Math.min(stages.length - 1, Math.floor(top / (GRID_HEIGHT / stages.length)))
+const getCenteredCardTop = (artist) =>
+  `${getStageIndex(artist.cardTop) * STAGE_HEIGHT_PERCENT + (STAGE_HEIGHT_PERCENT - (artist.cardHeight / GRID_HEIGHT) * 100) / 2}%`
+const getCenteredStarTop = (artist) =>
+  `${getStageIndex(artist.cardTop) * STAGE_HEIGHT_PERCENT + (STAGE_HEIGHT_PERCENT - (artist.starSize / GRID_HEIGHT) * 100) / 2}%`
+const getStarTop = (artist) =>
+  `calc(${getCenteredStarTop(artist)} + ${artist.starOffsetY ?? 0}px)`
+const getAdjustedStarLeft = (artist) =>
+  getStarLeft(artist) + (artist.starOffsetX ?? 0)
+const getStarSize = (artist) => artist.starSize * STAR_SCALE
 
 function Lineup() {
   const navigate = useNavigate()
@@ -45,11 +103,6 @@ function Lineup() {
   return (
     <div className="lineup-page">
       <div className="lineup-top">
-        <div className="lineup-statusbar">
-          <span>14:23</span>
-          <div className="lineup-status-icons">▮▮▮ ⌶ ▱</div>
-        </div>
-
         <div className="lineup-header">
           <div className="lineup-brand-wrap">
             <img src={sunLogo} alt="" className="lineup-sun-logo" />
@@ -98,7 +151,7 @@ function Lineup() {
               className="timeline-board"
               style={{
                 width: `${TIMELINE_WIDTH}px`,
-                height: `${TIMELINE_HEIGHT}px`,
+                height: `max(${TIMELINE_HEIGHT}px, 100%)`,
               }}
             >
               <img src={mainRectangle} alt="" className="timeline-main-bg" />
@@ -133,7 +186,7 @@ function Lineup() {
                   className="timeline-stage-column"
                   style={{
                     width: `${LEFT_RAIL_WIDTH}px`,
-                    height: `${GRID_HEIGHT}px`,
+                    height: '100%',
                   }}
                 >
                   {stages.map((stage, index) => (
@@ -141,9 +194,9 @@ function Lineup() {
                       key={stage}
                       className="timeline-stage-block"
                       style={{
-                        top: `${index * ROW_HEIGHT}px`,
+                        top: `${index * STAGE_HEIGHT_PERCENT}%`,
                         width: `${LEFT_RAIL_WIDTH}px`,
-                        height: `${ROW_HEIGHT}px`,
+                        height: `${STAGE_HEIGHT_PERCENT}%`,
                       }}
                     >
                       <img
@@ -161,7 +214,7 @@ function Lineup() {
                   style={{
                     left: `${LEFT_RAIL_WIDTH}px`,
                     width: `${TIMELINE_WIDTH - LEFT_RAIL_WIDTH}px`,
-                    height: `${GRID_HEIGHT}px`,
+                    height: '100%',
                   }}
                 >
                   {stages.map((stage, index) => (
@@ -169,8 +222,8 @@ function Lineup() {
                       key={stage}
                       className="timeline-row-bg"
                       style={{
-                        top: `${index * ROW_HEIGHT}px`,
-                        height: `${ROW_HEIGHT}px`,
+                        top: `${index * STAGE_HEIGHT_PERCENT}%`,
+                        height: `${STAGE_HEIGHT_PERCENT}%`,
                       }}
                     >
                       <img
@@ -195,9 +248,9 @@ function Lineup() {
                         type="button"
                         className="artist-card-button"
                         style={{
-                          left: `${artist.cardLeft}px`,
-                          top: `${artist.cardTop}px`,
-                          width: `${artist.cardWidth}px`,
+                          left: `${getCardLeft(artist)}px`,
+                          top: getCenteredCardTop(artist),
+                          width: `${getCardWidth(artist)}px`,
                           height: `${artist.cardHeight}px`,
                         }}
                         onClick={() => setSelectedArtist(artist)}
@@ -212,16 +265,28 @@ function Lineup() {
 
                       {artist.starSize > 0 && (
                         <>
-                          {isSaved(artist) && (
-                            <img
-                              src={starFrame}
-                              alt=""
+                          {isSaved(artist) ? (
+                            <span
+                              aria-hidden="true"
                               className="artist-star-selected"
                               style={{
-                                left: `${artist.starLeft}px`,
-                                top: `${artist.starTop}px`,
-                                width: `${artist.starSize}px`,
-                                height: `${artist.starSize}px`,
+                                left: `${getAdjustedStarLeft(artist)}px`,
+                                top: getStarTop(artist),
+                                width: `${getStarSize(artist)}px`,
+                                height: `${getStarSize(artist)}px`,
+                                '--star-icon': `url(${starIcon})`,
+                              }}
+                            />
+                          ) : (
+                            <img
+                              src={starIcon}
+                              alt=""
+                              className="artist-star-default"
+                              style={{
+                                left: `${getAdjustedStarLeft(artist)}px`,
+                                top: getStarTop(artist),
+                                width: `${getStarSize(artist)}px`,
+                                height: `${getStarSize(artist)}px`,
                               }}
                             />
                           )}
@@ -230,10 +295,10 @@ function Lineup() {
                             type="button"
                             className="artist-star-hitbox"
                             style={{
-                              left: `${artist.starLeft}px`,
-                              top: `${artist.starTop}px`,
-                              width: `${artist.starSize}px`,
-                              height: `${artist.starSize}px`,
+                              left: `${getAdjustedStarLeft(artist)}px`,
+                              top: getStarTop(artist),
+                              width: `${getStarSize(artist)}px`,
+                              height: `${getStarSize(artist)}px`,
                             }}
                             onClick={(e) => {
                               e.stopPropagation()
