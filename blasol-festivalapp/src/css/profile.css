@@ -2,15 +2,14 @@
 
 .profile-page {
   width: 100%;
-  max-width: 430px;
-  height: 100vh;
-  margin: 0 auto;
+  min-height: calc(100svh - 120px);
   background: #f6f0df;
-  padding-bottom: 110px;
   box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
 }
 
 .profile-top {

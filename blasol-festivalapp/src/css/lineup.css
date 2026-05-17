@@ -2,15 +2,12 @@
 
 .lineup-page {
   width: 100%;
-  max-width: 430px;
-  height: calc(100svh - 84px);
-  margin: 0 auto;
+  min-height: calc(100svh - 120px);
   background: #f6f0df;
   box-sizing: border-box;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  padding-bottom: 7px;
 }
 
 .lineup-top {

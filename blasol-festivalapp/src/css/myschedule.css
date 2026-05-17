@@ -2,12 +2,11 @@
 
 .myschedule-page {
   width: 100%;
-  max-width: 430px;
-  min-height: 100vh;
-  margin: 0 auto;
+  min-height: calc(100svh - 120px);
   background: #f6f0df;
-  padding-bottom: 110px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
 }
 
 .myschedule-top {

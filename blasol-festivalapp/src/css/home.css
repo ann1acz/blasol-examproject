@@ -2,14 +2,12 @@
 
 .home-page {
   width: 100%;
-  max-width: 430px;
-  min-height: calc(100svh - 120px);
-  margin: 0 auto;
   background: #f6f0df;
-  padding-bottom: 90px;
   box-sizing: border-box;
   font-family: 'Bowlby One', sans-serif;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .home-top {

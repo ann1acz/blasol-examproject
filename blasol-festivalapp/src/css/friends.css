@@ -1,0 +1,264 @@
+.map-page {
+	min-height: calc(100svh - 120px);
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding-top: 76px;
+	padding-bottom: 260px;
+}
+
+.map-header {
+	position: fixed;
+	left: 50%;
+	top: 16px;
+	transform: translateX(-50%);
+	width: 100%;
+	max-width: 430px;
+	height: 72px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: #ffffff;
+	border-bottom: 1px solid #e5ebf2;
+	z-index: 950;
+}
+
+.page-title {
+    margin: 0;
+    font-family: 'Bowlby One', serif;
+    text-transform: uppercase;
+    color: #F4EDDE;
+    font-size: 30px;
+    line-height: 1.1;
+    position: absolute;
+	right: 20px;
+	top: 42px;
+	text-align: right;
+    letter-spacing: 1.5px;
+}
+
+.friends-title {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #4A5B7A;
+    font-size: 20px;
+    line-height: 1.1;
+    letter-spacing: 1.5px;
+    position: absolute;
+    left: 24px;
+    top: 20px;
+    z-index: 3;
+    font-weight: 600;
+}
+
+.map-header-image {
+	width: auto;
+	height: auto;
+	max-width: none;
+	max-height: none;
+	display: block;
+}
+
+.map-friends-panel {
+	position: fixed;
+	z-index: 20;
+}
+
+.map-friends-bg {
+	position: absolute;
+	left: 0;
+	width: auto;
+	height: auto;
+	max-width: none;
+	max-height: none;
+	display: block;
+	z-index: 0;
+}
+
+.map-friends-row {
+    top: 26px;
+	margin: 20px;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+	justify-content: flex-start;
+	gap: 8px;
+	overflow-x: auto;
+	padding: 4px 0;
+	white-space: nowrap;
+}
+
+.map-buttons {
+	position: fixed;
+	z-index: 30;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+	gap: 2px;
+	right: 750px;
+	top: 236px;
+}
+
+.map-button-expand {
+	z-index: 2;
+	width: auto;
+	height: auto;
+	display: block;
+}
+
+.map-button-friendview {
+	z-index: 2;
+	width: auto;
+	height: auto;
+	display: block;
+}
+
+.map-canvas-section {
+	position: absolute;
+	inset: 0 0 88px 0;
+	min-height: 0;
+	z-index: 1;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	pointer-events: none;
+}
+
+.map-canvas-controls {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	padding: 140px 12px 0;
+	pointer-events: auto;
+}
+
+.map-control-button {
+	border: none;
+	border-radius: 999px;
+	padding: 8px 14px;
+	font-family: 'Poppins', sans-serif;
+	font-size: 14px;
+	font-weight: 600;
+	line-height: 1;
+	background: #f4edde;
+	color: #2a241e;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.14);
+	cursor: pointer;
+	top: 200px;
+}
+
+.map-canvas-viewport {
+	position: relative;
+	flex: 1;
+	min-height: 0;
+	width: 100%;
+	overflow: hidden;
+	border-radius: 0;
+	background: #D2D7D9;
+	touch-action: none;
+	cursor: grab;
+	z-index: 2;
+	pointer-events: auto;
+}
+
+.map-canvas-viewport.is-dragging {
+	cursor: grabbing;
+}
+
+.map-canvas-image {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: auto;
+	transform-origin: top left;
+	user-select: none;
+	pointer-events: none;
+	will-change: transform;
+}
+
+.map-legend-wrap {
+	position: fixed;
+	left: 50%;
+	bottom: 0;
+	transform: translateX(-50%);
+	display: inline-block;
+	z-index: 900;
+}
+
+.map-legend {
+	width: auto;
+	height: auto;
+	max-width: none;
+	max-height: none;
+	display: block;
+}
+
+.legend-title {
+	margin: 0;
+	font-family: 'Bowlby One', serif;
+	text-transform: uppercase;
+	color: #F4EDDE;
+	font-size: 24px;
+	line-height: 1.1;
+	letter-spacing: 1.5px;
+	position: absolute;
+	left: 20px;
+	top: 12px;
+	z-index: 1;
+}
+
+.legend-labels {
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+}
+
+.legend-label {
+	margin: 0;
+	position: absolute;
+	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
+	line-height: 1.1;
+	color: #2A241E;
+    font-weight: 600;
+}
+
+.you-are {
+	left: 76px;
+	top: 72px;
+}
+
+.friends-icons {
+	left: 280px;
+	top: 72px;
+}
+
+
+
+@media (max-width: 460px) {
+	.map-header {
+		max-width: none;
+	}
+
+	.map-canvas-section {
+		inset: 0 0 88px 0;
+		margin-top: 0;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.map-canvas-viewport {
+		min-height: 0;
+	}
+
+	.map-control-button {
+		padding: 8px 12px;
+		font-size: 13px;
+	}
+}
