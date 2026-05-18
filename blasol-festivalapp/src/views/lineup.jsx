@@ -151,7 +151,8 @@ function Lineup() {
               className="timeline-board"
               style={{
                 width: `${TIMELINE_WIDTH}px`,
-                height: `max(${TIMELINE_HEIGHT}px, 100%)`,
+                minWidth: `${TIMELINE_WIDTH}px`,
+                height: `${TIMELINE_HEIGHT}px`,
               }}
             >
               <img src={mainRectangle} alt="" className="timeline-main-bg" />

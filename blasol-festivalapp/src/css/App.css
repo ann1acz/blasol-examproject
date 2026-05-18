@@ -1,13 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   background: #f4f6f8;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden;
 }
 
 #root {
-  min-height: 100svh;
+  height: 100svh;
   display: grid;
   place-items: center;
   padding: 16px;
@@ -17,18 +23,24 @@ body {
 .app-shell {
   width: 100%;
   max-width: 430px;
+  height: 100svh;
   max-height: 934px;
-  min-height: 100svh;
   background: #ffffff;
   position: relative;
   box-shadow: 0 12px 40px rgba(8, 16, 30, 0.08);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
 .app-content {
-  min-height: 100svh;
-  /*padding: 28px 20px 120px; */
+  flex: 1;
+  min-height: 0;
   box-sizing: border-box;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .screen-title {
@@ -53,7 +65,7 @@ body {
   width: 100%;
   max-width: 430px;
   height: 88px;
-  background: #4A5B7A;
+  background: #4a5b7a;
   border-top: 1px solid #e5ebf2;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -74,19 +86,16 @@ body {
   font-weight: 700;
   color: #ffffff;
   transition: background-color 0.2s ease, color 0.2s ease;
-  /* Lets the wider SVG backgrounds show outside a single nav column. */
   overflow: visible;
   z-index: 1;
 }
 
-/* Keeps the selected link above the other nav items when its SVG overlaps them. */
 .nav-item.active {
   z-index: 2;
 }
 
 .nav-icon {
   position: relative;
-  /* Places the icon above the SVG background. */
   z-index: 1;
   width: auto;
   height: auto;
@@ -98,7 +107,6 @@ body {
 
 .nav-label {
   position: relative;
-  /* Places the text above the SVG background. */
   z-index: 1;
   font-size: 12px;
   letter-spacing: 0.03em;
@@ -108,22 +116,18 @@ body {
   position: absolute;
   top: 0;
   pointer-events: none;
-  /* Places the SVG behind the icon and label inside the nav item. */
   z-index: 0;
 }
 
-/* Home starts at the left side of its nav item. */
 .navbar-overlay-home {
   left: 0;
 }
 
-/* Map and Lineup are wider, so they are centered on their nav item. */
 .navbar-overlay-middle {
   left: 50%;
   transform: translateX(-50%);
 }
 
-/* Profile sticks to the right so it does not spill past the navbar edge. */
 .navbar-overlay-profile {
   right: 0;
 }
@@ -131,11 +135,14 @@ body {
 @media (max-width: 460px) {
   #root {
     padding: 0;
+    height: 100svh;
   }
 
   .app-shell {
     max-width: none;
     width: 100%;
+    height: 100svh;
+    max-height: none;
     box-shadow: none;
   }
 
