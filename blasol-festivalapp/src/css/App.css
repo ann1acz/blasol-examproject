@@ -17,17 +17,20 @@ body {
 .app-shell {
   width: 100%;
   max-width: 430px;
-  max-height: 934px;
+  /* allow the shell to grow with content so pages can scroll */
+  max-height: none;
   min-height: 100svh;
   background: #ffffff;
   position: relative;
   box-shadow: 0 12px 40px rgba(8, 16, 30, 0.08);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .app-content {
   min-height: 100svh;
-  /*padding: 28px 20px 120px; */
+  height: auto; /* allow content to determine height so page can scroll */
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
 }
 

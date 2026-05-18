@@ -50,7 +50,7 @@ const artistTimes = {
   20: ['20:15', '21:40'],
   21: ['22:00', '00:00'],
 }
-const toGridPercent = (value) => `${(value / GRID_HEIGHT) * 100}%`
+// const toGridPercent = (value) => `${(value / GRID_HEIGHT) * 100}%` (unused helper)
 const getArtistTimes = (artist) => artistTimes[artist.id]
 const timeToHours = (time) => {
   const [hours, minutes] = time.split(':').map(Number)
@@ -85,12 +85,10 @@ const getStarSize = (artist) => artist.starSize * STAR_SCALE
 
 function Lineup() {
   const navigate = useNavigate()
-  const [savedItems, setSavedItems] = useState([])
+  const [savedItems, setSavedItems] = useState(() => getSavedSchedule())
   const [selectedArtist, setSelectedArtist] = useState(null)
 
-  useEffect(() => {
-    setSavedItems(getSavedSchedule())
-  }, [])
+  // savedItems initialized from storage via useState initializer
 
   const handleToggle = (artist) => {
     const updated = toggleScheduleItem(artist)

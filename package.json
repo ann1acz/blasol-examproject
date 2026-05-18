@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "copy-to-clipboard": "^4.0.2",
+    "react-router-dom": "^7.15.1"
+  }
+}
