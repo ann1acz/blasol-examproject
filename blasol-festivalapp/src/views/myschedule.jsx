@@ -16,12 +16,12 @@ import { getSavedSchedule, toggleScheduleItem } from '../components/scheduleStor
 
 function MySchedule() {
   const navigate = useNavigate()
-  const [savedItems, setSavedItems] = useState([])
+  const [savedItems, setSavedItems] = useState(() => getSavedSchedule())
   const [search, setSearch] = useState('')
   const [selectedArtist, setSelectedArtist] = useState(null)
 
   useEffect(() => {
-    setSavedItems(getSavedSchedule())
+    // keep effect in case external updates are expected; state is initialized from storage
   }, [])
 
   const handleRemove = (artist) => {
