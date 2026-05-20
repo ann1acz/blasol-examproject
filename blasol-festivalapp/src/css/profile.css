@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@275;400;500;600;700&display=swap');
+
+.profile-page {
+  width: 100%;
+  min-height: calc(100svh - 120px);
+  background: #f6f0df;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-top {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent;
+  overflow: hidden;
+  line-height: 0;
+  position: relative;
+}
+
+.profile-top-shape {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-page-title {
+  margin: 0;
+  font-family: 'Bowlby One', serif;
+  text-transform: uppercase;
+  color: #f4edde;
+  font-size: 30px;
+  line-height: 1.1;
+  position: absolute;
+  right: 20px;
+  top: 62px;
+  text-align: right;
+  letter-spacing: 1.5px;
+  z-index: 3;
+}
+
+.profile-hero-wrap {
+  position: relative;
+  margin-top: -38px;
+  margin-bottom: -2px;
+  z-index: 1;
+}
+
+.profile-top-hero {
+  display: block;
+  width: 100%;
+  height: auto;
+  transform: translateY(-1px);
+}
+
+.profile-card-content {
+  position: absolute;
+  top: 48px;
+  left: 22px;
+  right: 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  line-height: normal;
+}
+
+.profile-picture-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 142px;
+  flex-shrink: 0;
+}
+
+.profile-picture {
+  width: 96px;
+  height: 108px;
+  object-fit: cover;
+  border-radius: 24px;
+  display: block;
+}
+
+.profile-update-button {
+  margin-top: 10px;
+  border: none;
+  background: transparent;
+  color: #2a241e;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 275;
+  line-height: normal;
+  letter-spacing: 0.96px;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  width: 142px;
+  white-space: nowrap;
+}
+
+.profile-user-info {
+  flex: 1;
+  min-width: 0;
+  align-self: flex-start;
+  padding-top: 6px;
+}
+
+.profile-user-name {
+  margin: 0 0 10px;
+  color: #3d3228;
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.44px;
+}
+
+.profile-user-role,
+.profile-user-code {
+  margin: 0;
+  color: rgba(61, 50, 40, 0.72);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.profile-divider-wrap {
+  width: 100%;
+  line-height: 0;
+  margin: -2px 0 14px;
+}
+
+.profile-divider-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.profile-ticket-section {
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.profile-section-title {
+  margin: 0 0 14px;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.68px;
+  text-align: left;
+}
+
+.profile-ticket-button {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.profile-ticket-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.profile-more-section {
+  width: 100%;
+  padding: 18px 20px 0 14px;
+  box-sizing: border-box;
+}
+
+.profile-more-title {
+  display: block;
+  width: 100%;
+  margin: 0 0 14px;
+  color: #000;
+  font-family: 'Poppins', sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.68px;
+  text-align: left;
+}
+
+.profile-more-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+}
+
+.profile-more-item {
+  width: 100%;
+  min-height: 56px;
+  border: none;
+  border-radius: 8px;
+  background: #e8ddc1;
+  color: #3d3228;
+  text-align: left;
+  padding: 0 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 1.44px;
+  cursor: pointer;
+}
+
+.ticket-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+.ticket-overlay-content {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticket-overlay-close {
+  position: absolute;
+  top: -14px;
+  right: -4px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #222;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.ticket-overlay-image {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 12px;
+}

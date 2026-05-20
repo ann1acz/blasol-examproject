@@ -1,0 +1,299 @@
+
+    @import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+
+.home-page {
+  width: 100%;
+  max-width: 430px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: #f6f0df;
+  padding-top: 76px;
+  padding-bottom: 140px; /* extra bottom space so user can scroll further up */
+  box-sizing: border-box;
+  font-family: 'Bowlby One', sans-serif;
+  overflow-x: hidden;
+}
+
+.home-header {
+  position: fixed;
+  left: 50%;
+  top: 0px;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border-bottom: 1px solid #e5ebf2;
+  z-index: 950;
+}
+
+.home-header-image {
+  display: block;
+}
+
+.home-page-title {
+  margin: 0;
+  font-family: 'Bowlby One', serif;
+  text-transform: uppercase;
+  color: #f4edde;
+  font-size: 30px;
+  line-height: 1.1;
+  position: absolute;
+  right: 20px;
+  top: 42px;
+  text-align: right;
+  letter-spacing: 1.5px;
+  z-index: 3;
+}
+
+.home-top {
+  overflow: hidden;
+  line-height: 0;
+}
+
+.home-top-hero {
+  display: block;
+  width: 100%;
+  bottom: 10px;
+  margin-bottom: -2px;
+  position: relative;
+}
+
+@media (max-width: 460px) {
+  .home-header {
+    max-width: none;
+  }
+}
+
+.home-friends-title,
+.home-ticket-title,
+.home-live-title {
+  margin: 0 0 14px 24px;
+  color: #4a5b7a;
+  font-family: 'Bowlby One', sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 1.8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.friends-nearby-section {
+  margin-top: -12px;
+  padding-top: 12px;
+}
+
+.friends-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 17px 0 24px;
+  box-sizing: border-box;
+}
+
+.friend-card {
+  width: 58px;
+  flex-shrink: 0;
+}
+
+.friend-avatar {
+  width: 58px;
+  height: 72px;
+  object-fit: contain;
+  display: block;
+}
+
+.see-map-button {
+  position: relative;
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 150px; /* fixed width so labels line up */
+}
+
+.see-map-button img {
+  display: block;
+  width: 80px;
+  height: auto;
+  padding-left: 10px;
+}
+
+.see-map-text {
+  font-family: 'poppins';
+  font-weight: 500;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 10px;
+  right: 12px; /* leave some room on the right for the triangle */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* align text to the left */
+  color: #2A241E;
+  font-size: 14px;
+  line-height: 1;
+  text-align: left;
+  pointer-events: none;
+  
+}
+
+.ticket-section {
+  margin-top: 40px;
+  padding-top: 12px;
+}
+
+.ticket-wrapper {
+  padding: 0 17px;
+}
+
+.ticket-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.live-now-section {
+  margin-top: 40px;
+  padding-top: 12px;
+  margin-bottom: 40px;
+  
+}
+
+.live-now-wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0 17px;
+  box-sizing: border-box;
+}
+
+.whats-next-section {
+  margin-top: 20px;
+  padding-top: 12px;
+  
+}
+
+.whats-next-block {
+  padding: 0 17px;
+}
+
+.whats-next-title {
+  text-align: right;
+  margin: 0 15px 15px 0;
+}
+
+.whats-next-images {
+  position: relative;
+  height: 110px; /* container height to hold overlapping images */
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.whats-next-inner {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 120px; /* keeps the images in frame above the navbar */
+  display: inline-block;
+  width: auto;
+  height: 100%;
+}
+
+.whats-next-inner img {
+  height: 80px ; /* match SAVEUS height */
+  max-height: 80px;
+  width: 260px ; /* fixed width to match SAVEUS */
+  object-fit: contain;
+  display: inline-block;
+}
+
+.whats-next-left {
+  /* hippie image sits lower and further left */
+  transform: translate(-70px, 18px);
+  margin-right: -44px; /* overlap */
+  z-index: 1;
+}
+
+.whats-next-right {
+  /* galop-derby nudged further right and up for stronger stagger */
+  transform: translate(90px, 0px);
+  margin-left: -44px; /* overlap */
+  z-index: 2;
+}
+
+.whats-next-item {
+  position: relative;
+  display: inline-block;
+}
+
+/* stars removed */
+
+/* Strong override to ensure these two banners display at the exact same size as SAVEUS */
+.whats-next-inner img.whats-next-left,
+.whats-next-inner img.whats-next-right,
+.whats-next-left,
+.whats-next-right {
+  width: 260px !important;
+  height: 80px !important;
+  max-width: none !important;
+  max-height: none !important;
+  display: block !important;
+}
+
+.live-now-image {
+  display: block;
+  width: 260px !important; /* fixed width to match whats-next banners */
+  height: 80px; /* keep it visually similar to other buttons */
+  object-fit: contain;
+}
+
+.see-lineup-button {
+  margin-left: auto;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  width: 150px; /* match see-map-button width for vertical alignment */
+}
+
+.see-lineup-button img {
+  display: block;
+  width: 80px;
+  height: auto;
+  padding-left: 40px;
+}
+
+.see-map-text::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 8px;
+  vertical-align: middle;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-left: 10px solid  #2A241E;
+  
+}
+
+/* Move the lineup label to the right while keeping the button image unchanged */
+.see-lineup-button .see-map-text {
+  left: auto;      /* cancel the left offset used by the map button */
+  right: 18px;     /* position label closer to the right edge */
+  justify-content: flex-end;
+  text-align: right;
+}
+

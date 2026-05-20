@@ -1,0 +1,62 @@
+.map-page {
+	min-height: 100svh;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.map-canvas-section {
+	position: absolute;
+	inset: 0 0 96px 0;
+	z-index: 1;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	pointer-events: none;
+}
+
+.map-page--bigger .map-canvas-controls {
+	position: absolute;
+	top: -14px;
+	left: 12px;
+	z-index: 10;
+	display: flex;
+	gap: 8px;
+	pointer-events: auto;
+    color: #2A241E;
+}
+
+
+.map-page--bigger .map-buttons {
+	position: absolute;
+	z-index: 30;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: flex-end;
+	gap: 2px;
+	right: 12px;
+	top: 130px;
+}
+
+.map-button-expand {
+	z-index: 2;
+	width: auto;
+	height: auto;
+	display: block;
+}
+
+.map-button-friendview {
+	z-index: 2;
+	width: auto;
+	height: auto;
+	display: block;
+}
+
+.map-canvas-viewport {
+	flex: 1;
+	min-height: 0;
+	pointer-events: auto;
+}
