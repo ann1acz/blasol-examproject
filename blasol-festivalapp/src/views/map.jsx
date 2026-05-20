@@ -103,6 +103,30 @@ function Map() {
     }
   }
 
+  const getCenteredOffset = (targetScale) => {
+    const viewportEl = viewportRef.current
+    const mapEl = mapRef.current
+
+    if (!viewportEl || !mapEl) {
+      return { x: 0, y: 0 }
+    }
+
+    const baseWidth = mapEl.offsetWidth
+    const baseHeight = mapEl.offsetHeight
+
+    if (baseWidth === 0 || baseHeight === 0) {
+      return { x: 0, y: 0 }
+    }
+
+    const scaledWidth = baseWidth * targetScale
+    const scaledHeight = baseHeight * targetScale
+
+    return {
+      x: (viewportEl.clientWidth - scaledWidth) / 2,
+      y: (viewportEl.clientHeight - scaledHeight) / 2,
+    }
+  }
+
   const updateScale = (delta, focalPoint) => {
     setScale((previousScale) => {
       const nextScale = clampScale(previousScale + delta)
@@ -194,7 +218,9 @@ function Map() {
 
   const centerMap = () => {
     setScale(DEFAULT_SCALE)
-    setOffset({ x: 0, y: 0 })
+
+    const centeredOffset = getCenteredOffset(DEFAULT_SCALE)
+    setOffset(clampOffset(centeredOffset, DEFAULT_SCALE))
   }
 
   return (
@@ -254,6 +280,7 @@ function Map() {
             src={mapImage}
             alt="Festival grounds map"
             draggable="false"
+            onLoad={centerMap}
             style={{ transform: `translate(${offset.x}px, ${offset.y}px) scale(${scale})` }}
           />
         </div>

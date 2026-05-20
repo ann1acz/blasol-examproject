@@ -6,10 +6,11 @@
 .home-page {
   width: 100%;
   max-width: 430px;
+  height: calc(100svh - 88px);
   min-height: calc(100svh - 120px);
   margin: 0 auto;
   background: #f6f0df;
-  padding-top: 76px;
+  padding-top: 80px;
   padding-bottom: 90px;
   box-sizing: border-box;
   font-family: 'Bowlby One', sans-serif;
@@ -29,7 +30,7 @@
 .home-header {
   position: fixed;
   left: 50%;
-  top: 0px;
+  top: 16px;
   transform: translateX(-50%);
   width: 100%;
   max-width: 430px;
@@ -143,11 +144,21 @@
   width: 150px; /* fixed width so labels line up */
 }
 
-.see-map-button img {
+.see-lineup-button {
+  position: relative;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 150px;
+}
+
+.see-map-button img,
+.see-lineup-button img {
   display: block;
   width: 80px;
   height: auto;
-  padding-left: 10px;
 }
 
 .see-map-text {
@@ -156,8 +167,8 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  left: 10px;
-  right: 12px; /* leave some room on the right for the triangle */
+  left: 0;
+  width: 80px;
   display: flex;
   align-items: center;
   justify-content: flex-start; /* align text to the left */

@@ -61,6 +61,7 @@
 
 .map-friends-panel {
 	position: fixed;
+	top: 82px;
 	z-index: 20;
 }
 
