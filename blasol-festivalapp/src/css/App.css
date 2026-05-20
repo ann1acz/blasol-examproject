@@ -23,39 +23,22 @@ body {
 .app-shell {
   width: 100%;
   max-width: 430px;
-<<<<<<< HEAD
-  height: 100svh;
-  max-height: 934px;
+  min-height: 100svh;
+  max-height: none;
   background: #ffffff;
   position: relative;
   box-shadow: 0 12px 40px rgba(8, 16, 30, 0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 0;
-}
-
-.app-content {
-  flex: 1;
-  min-height: 0;
-=======
-  /* allow the shell to grow with content so pages can scroll */
-  max-height: none;
-  min-height: 100svh;
-  background: #ffffff;
-  position: relative;
-  box-shadow: 0 12px 40px rgba(8, 16, 30, 0.08);
-  overflow: visible;
 }
 
 .app-content {
   min-height: 100svh;
-  height: auto; /* allow content to determine height so page can scroll */
+  height: auto;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
->>>>>>> fe4b2542f086d1f34c1343b76b4e412b2dfbe064
   box-sizing: border-box;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -158,7 +141,7 @@ body {
   .app-shell {
     max-width: none;
     width: 100%;
-    height: 100svh;
+    min-height: 100svh;
     max-height: none;
     box-shadow: none;
   }
