@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import homeIcon from '../assets/home-icon.svg'
 import mapIcon from '../assets/map-icon.svg'
 import lineupIcon from '../assets/lineup-icon.svg'
@@ -75,6 +75,7 @@ function NavItemContent({ icon, label, isActive, Overlay }) {
 }
 
 function Navbar() {
+  const navigate = useNavigate()
   return (
     <nav className="app-navbar" aria-label="Main navigation">
       <NavLink
@@ -123,6 +124,7 @@ function Navbar() {
       <NavLink
         to="/profile"
         className={({ isActive }) => (isActive ? 'nav-item active' : 'nav-item')}
+        onClick={() => navigate('/profile')}
       >
         {/* Profile uses its own SVG shape so it fits the right edge of the navbar. */}
         {({ isActive }) => (

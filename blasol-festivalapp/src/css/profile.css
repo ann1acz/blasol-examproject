@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&family=Poppins:wght@275;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@275;400;500;600;700&display=swap');
 
 .profile-page {
   width: 100%;
-  height: 100%;
-  min-height: 0;
+  min-height: calc(100svh - 120px);
   background: #f6f0df;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -11,15 +10,6 @@
   -webkit-overflow-scrolling: touch;
   display: flex;
   flex-direction: column;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  padding-bottom: 120px;
-}
-
-.profile-page::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-  display: none;
 }
 
 .profile-top {
@@ -30,7 +20,6 @@
   overflow: hidden;
   line-height: 0;
   position: relative;
-  flex-shrink: 0;
 }
 
 .profile-top-shape {
@@ -50,7 +39,7 @@
   line-height: 1.1;
   position: absolute;
   right: 20px;
-  top: 32px;
+  top: 62px;
   text-align: right;
   letter-spacing: 1.5px;
   z-index: 3;
@@ -72,9 +61,9 @@
 
 .profile-card-content {
   position: absolute;
-  top: 46px;
-  left: 28px;
-  right: 24px;
+  top: 48px;
+  left: 22px;
+  right: 22px;
   display: flex;
   align-items: flex-start;
   gap: 18px;
@@ -85,12 +74,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 124px;
+  width: 142px;
   flex-shrink: 0;
 }
 
 .profile-picture {
-  width: 108px;
+  width: 96px;
   height: 108px;
   object-fit: cover;
   border-radius: 24px;
@@ -101,16 +90,17 @@
   margin-top: 10px;
   border: none;
   background: transparent;
-  color: #3d3228;
+  color: #2a241e;
   font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 275;
   line-height: normal;
-  letter-spacing: 0.4px;
+  letter-spacing: 0.96px;
   cursor: pointer;
   padding: 0;
   text-align: left;
+  width: 142px;
   white-space: nowrap;
 }
 
@@ -118,18 +108,18 @@
   flex: 1;
   min-width: 0;
   align-self: flex-start;
-  padding-top: 10px;
+  padding-top: 6px;
 }
 
 .profile-user-name {
-  margin: 0 0 6px;
+  margin: 0 0 10px;
   color: #3d3228;
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  letter-spacing: 1.08px;
+  letter-spacing: 1.44px;
 }
 
 .profile-user-role,
@@ -137,7 +127,7 @@
   margin: 0;
   color: rgba(61, 50, 40, 0.72);
   font-family: 'Poppins', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-style: italic;
   font-weight: 400;
   line-height: 1.55;
@@ -146,8 +136,7 @@
 .profile-divider-wrap {
   width: 100%;
   line-height: 0;
-  margin: -4px 0 10px;
-  flex-shrink: 0;
+  margin: -2px 0 14px;
 }
 
 .profile-divider-image {
@@ -158,20 +147,19 @@
 
 .profile-ticket-section {
   width: 100%;
-  padding: 0 28px;
+  padding: 0 20px;
   box-sizing: border-box;
-  flex-shrink: 0;
 }
 
 .profile-section-title {
   margin: 0 0 14px;
   color: #000;
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  letter-spacing: 0.4px;
+  letter-spacing: 1.68px;
   text-align: left;
 }
 
@@ -193,9 +181,8 @@
 
 .profile-more-section {
   width: 100%;
-  padding: 24px 28px 0;
+  padding: 18px 20px 0 14px;
   box-sizing: border-box;
-  flex-shrink: 0;
 }
 
 .profile-more-title {
@@ -204,11 +191,11 @@
   margin: 0 0 14px;
   color: #000;
   font-family: 'Poppins', sans-serif;
-  font-size: 20px;
+  font-size: 28px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  letter-spacing: 0.4px;
+  letter-spacing: 1.68px;
   text-align: left;
 }
 
@@ -216,12 +203,12 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding-bottom: 32px;
+  padding-bottom: 20px;
 }
 
 .profile-more-item {
   width: 100%;
-  min-height: 48px;
+  min-height: 56px;
   border: none;
   border-radius: 8px;
   background: #e8ddc1;
@@ -233,7 +220,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  letter-spacing: 0.6px;
+  letter-spacing: 1.44px;
   cursor: pointer;
 }
 

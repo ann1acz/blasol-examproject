@@ -180,6 +180,7 @@ function Home() {
               src={ticketImg}
               alt="Expanded festival ticket"
               className="ticket-overlay-image"
+               
             />
           </div>
         </div>

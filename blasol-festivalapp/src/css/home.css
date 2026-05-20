@@ -196,5 +196,62 @@
 
 .live-now-section {
   margin-top: 18px;
-  padding-top: 12px;
+  padding: 12px 17px 24px;
+  box-sizing: border-box;
+}
+
+.live-now-card {
+  width: 100%;
+}
+
+.live-now-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ticket-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  z-index: 9999;
+}
+
+.ticket-overlay-content {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ticket-overlay-close {
+  position: absolute;
+  top: -14px;
+  right: -4px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #222;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+   
+}
+
+.ticket-overlay-image {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 12px;
 }
