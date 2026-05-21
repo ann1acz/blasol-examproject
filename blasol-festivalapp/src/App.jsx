@@ -11,7 +11,7 @@ import MySchedule from './views/myschedule.jsx'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/blasol-examproject">
       <div className="app-shell">
         <main className="app-content">
           <Routes>
