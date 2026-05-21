@@ -1,7 +1,5 @@
-
-    @import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
 
 .home-page {
   width: 100%;
@@ -141,7 +139,7 @@
   padding: 0;
   cursor: pointer;
   flex-shrink: 0;
-  width: 150px; /* fixed width so labels line up */
+  width: 150px;
 }
 
 .see-lineup-button {
@@ -152,6 +150,7 @@
   cursor: pointer;
   flex-shrink: 0;
   width: 150px;
+  margin-top: 12px;
 }
 
 .see-map-button img,
@@ -162,7 +161,7 @@
 }
 
 .see-map-text {
-  font-family: 'poppins';
+  font-family: 'Poppins', sans-serif;
   font-weight: 500;
   position: absolute;
   top: 0;
@@ -171,13 +170,12 @@
   width: 80px;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* align text to the left */
+  justify-content: flex-start;
   color: #2A241E;
   font-size: 14px;
   line-height: 1;
   text-align: left;
   pointer-events: none;
-  
 }
 
 .ticket-section {
@@ -211,14 +209,48 @@
   box-sizing: border-box;
 }
 
-.live-now-card {
-  width: 100%;
+.live-now-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .live-now-image {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 12px;
+}
+
+.whats-next-section {
+  padding: 0 17px 24px;
+  box-sizing: border-box;
+}
+
+.whats-next-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.whats-next-item {
+  width: 100%;
+}
+
+.whats-next-image-button {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.whats-next-image-button img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
 }
 
 .ticket-overlay {
@@ -256,7 +288,6 @@
   line-height: 1;
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-   
 }
 
 .ticket-overlay-image {

@@ -12,6 +12,10 @@ function Profile() {
   const navigate = useNavigate()
   const [showTicket, setShowTicket] = useState(false)
 
+  const goToWebsite = () => {
+    window.open('https://blaasol.dk/', '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <div className="profile-page">
       <div className="profile-top">
@@ -25,7 +29,9 @@ function Profile() {
           <div className="profile-card-content">
             <div className="profile-picture-wrap">
               <img src={profilePic} alt="Profile" className="profile-picture" />
-              <button className="profile-update-button" type="button">Update</button>
+              <button className="profile-update-button" type="button">
+                Update
+              </button>
             </div>
 
             <div className="profile-user-info">
@@ -54,17 +60,51 @@ function Profile() {
 
       <div className="profile-more-section">
         <h4 className="profile-more-title">More</h4>
+
         <div className="profile-more-list">
-          <button className="profile-more-item" type="button" onClick={() => navigate('/lineup')}>Lineup</button>
-          <button className="profile-more-item" type="button" onClick={() => navigate('/myschedule')}>My Schedule</button>
-          <button className="profile-more-item" type="button">Settings</button>
+          <button
+            className="profile-more-item"
+            type="button"
+            onClick={() => navigate('/myschedule')}
+          >
+            Scheduled Events
+          </button>
+
+          <button
+            className="profile-more-item"
+            type="button"
+            onClick={() => navigate('/')}
+          >
+            Friends List
+          </button>
+
+          <button
+            className="profile-more-item"
+            type="button"
+          >
+            Settings
+          </button>
+
+          <button
+            className="profile-more-item"
+            type="button"
+            onClick={goToWebsite}
+          >
+            BLÅ SOL Website
+          </button>
         </div>
       </div>
 
       {showTicket && (
         <div className="ticket-overlay" onClick={() => setShowTicket(false)}>
           <div className="ticket-overlay-content" onClick={(e) => e.stopPropagation()}>
-            <button className="ticket-overlay-close" type="button" onClick={() => setShowTicket(false)}>×</button>
+            <button
+              className="ticket-overlay-close"
+              type="button"
+              onClick={() => setShowTicket(false)}
+            >
+              ×
+            </button>
             <img src={ticketImg} alt="Ticket" className="ticket-overlay-image" />
           </div>
         </div>

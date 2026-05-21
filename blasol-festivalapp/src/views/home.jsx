@@ -94,7 +94,11 @@ function Home() {
           <h2 className="home-live-title">LIVE NOW</h2>
 
           <div className="live-now-wrapper">
-            <img src={SAVEUS || saveusProfileImg} alt="Live now" className="live-now-image" />
+            <img
+              src={saveusProfileImg}
+              alt="SAVEUS profile"
+              className="live-now-image"
+            />
             <button
               className="see-lineup-button"
               type="button"
@@ -180,7 +184,6 @@ function Home() {
               src={ticketImg}
               alt="Expanded festival ticket"
               className="ticket-overlay-image"
-               
             />
           </div>
         </div>
